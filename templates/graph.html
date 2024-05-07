@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Graph</title>
+</head>
+
+<style>
+   #grid{
+      display : grid;
+      grid-template-columns: auto auto;
+   }
+
+   #date{
+        border: 2px solid #0097e6;
+        background: none;
+        display: block;
+        margin: 20px auto;
+        padding: 15px 45px;
+        width: 200px;
+        outline: none;
+        color: rgb(14, 13, 13);
+        border-radius: 25px;
+        text-align: center;
+        transition: 250ms width ease, 250ms border-color ease;
+        
+      }
+      a{
+         text-decoration: none;
+         color: black;
+         
+      }
+      button{
+         font-size: 15px;
+      }
+
+      #date:hover{
+        width: 210px;
+      }
+      /************** 
+        On Focus
+      ***************/
+      #date:focus{
+        width: 230px;
+        border-color: #6fb98f;
+      }
+      .next{
+         height: auto;
+         background-color: #c50750;
+         font-size: 50px;
+         text-align: center;
+         color: #fff;
+         transition-duration: 1s;
+      }
+      .container {
+         position: relative;
+         transition-duration: 0.5s;
+         
+         }
+
+         .centered-element {
+         margin: 0;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         }
+      .h{
+         font-size: 25px;
+         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+         
+      }
+      .container:hover{
+         transform: scale(1.01);
+      }
+      .next:hover{
+         transform: scale(1.01);
+      }
+      
+      
+   
+</style>
+
+<body >
+   <div id="grid" >
+      <div style="text-align: center;">
+         <h1>Predicted Your {{ clnm }} !</h1>
+         <img src="static/graph.png" alt="">
+      </div>
+      <div  class="container" style="font-size: 25px;background-color:aquamarine;">
+         <a href="{{url_for('download_file')}}" download="download" >
+            <button style="border:#274936 2px solid;background-color: transparent;border-radius: 20px;padding: 10px;" class="h centered-element " >Download Predicted File</button>
+      </a>
+      </div>
+   </div>
+   <form action="/sales" class="next">
+      <button type="submit" class="next" style="border: none;height: 400px;">
+         <div style="border:#57031c 4px solid;background-color: transparent;border-radius: 20px;padding: 15px;">
+            Predict Another File
+         </div>
+      </button>
+      
+   </form>
+   
+   
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1{
+      color:white;
+      font-size: 50px;
+    }
+
+    body{
+        background-color: rgb(41, 39, 39);
+    }
+    form{
+      text-align: center;
+    }
+    #date{
+        border: 2px solid #0097e6;
+        background: none;
+        display: block;
+        margin: 20px auto;
+        padding: 15px 45px;
+        width: 280px;
+        outline: none;
+        color: white;
+        border-radius: 25px;
+        text-align: center;
+        transition: 250ms width ease, 250ms border-color ease;
+      }
+      /************** 
+        On Hover
+      ***************/
+      #date:hover{
+        width: 210px;
+      }
+      /************** 
+        On Focus
+      ***************/
+      #date:focus{
+        width: 230px;
+        border-color: #6fb98f;
+      }
+
+      .select {
+
+        text-align: center;
+        -webkit-appearance:none;
+        -moz-appearance:none;
+        -ms-appearance:none;
+        appearance:none;
+        outline:0;
+        box-shadow:none;
+        border:0!important;
+        background: rgb(41, 39, 39);
+        background-image: none;
+        flex: 1;
+        padding: 0 .5em;
+        color:#fff;
+        cursor:pointer;
+        font-size: 1em;
+        font-family: 'Open Sans', sans-serif;
+      }
+      .select::-ms-expand {
+        display: none;
+      }
+      .select {
+        position: relative;
+        display: flex;
+        width: 18em;
+        height: 3em;
+        line-height: 3;
+        margin-left: auto;
+        margin-right: auto;
+        background: rgb(41, 39, 39);
+        overflow: hidden;
+        border-radius: .25em;
+        text-align: center;
+        justify-content: center;
+      }
+      .select::after {
+        content: '\25BC';
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 2em;
+        background: #2b2e2e;
+        cursor:pointer;
+        pointer-events:none;
+        transition:.25s all ease;
+      }
+      .select:hover::after {
+        color: #23b499;
+      }
+</style>
+<body>
+  
+    <form action="/graph" method="post" enctype='multipart/form-data'>
+      <h1>Sales Forecasting</h1>
+      <div class="select">
+        <select  id="format" class="select" name = "format" required>
+          <option selected disabled  ><strong>Periodicity</strong></option>
+          <option>Weekly</option>
+          <option>Month</option>
+          <option>Year</option>
+        </select>
+      </div>
+      
+        <input type="text" name="text" id="date" placeholder="Enter name of the coloumn you want to predict"  required>
+        <input type="number"  id="date" placeholder="How many values you want to predict" name="coun" required>
+        <!-- <input type="date" name ="fromdate" placeholder="From Date" id="date">
+        <input type="date" name="todate" id="date" placeholder="To Date"> -->
+        {{form.hidden_tag()}}
+        {{form.file()}}
+        {{form.submit()}}
+    </form>
+</body>
+</html>
+

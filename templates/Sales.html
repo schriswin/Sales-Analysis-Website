@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="static/login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <title>Login</title>
+</head>
+<body>
+    <div class="bg-container d-flex flex-row justify-content-center">
+        <div class="row d-flex flex-column">
+            <div class="col-12">
+              <img class="logo-set" src="static/logo.png">
+              <label class="text-center p-3">Kaar Technolgies</label>
+            <form class="was-validated">
+                <div class="mb-3">
+                    <label for="validationTextarea" class="form-label">Textarea</label>
+                    <textarea class="form-control" id="validationTextarea" placeholder="Sales Title" required></textarea>
+                </div>
+            </div>
+            <div class="mb-3">
+            <div class="invalid-feedback">Example invalid form file feedback</div>
+            </div>
+            <div class="col-md-3">
+                <label for="validationDefault04" class="form-label">Periodicity</label>
+                <select class="form-select" id="validationDefault04" required>
+                    <option selected disabled value="">Choose...</option>
+                    <option>Weekly</option>
+                    <option>Month</option>
+                    <option>Year</option>
+                </select>
+                
+            <div class="mb-3 pt-3">
+                <form action="/graph" method="post">
+                    <label for="date" class="form-label"  requried>From Date</label>
+                    <input type="date" placeholder="select date" name="fromdate">
+                    <label for="date" class="form-label "  required>To Date</label>
+                    <input type="date" placeholder="select date" name="todate">
+                    <button class="btn btn-primary" type="submit" >Submit</button>
+                </form>
+                
+            </div>
+            </div>
+        </form>
+</body>
+</html>
